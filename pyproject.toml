@@ -1,0 +1,37 @@
+[tool.poetry]
+name = "callbacks-server"
+version = "0.1.0"
+description = "Callbacks server for CascadePool system"
+authors = ["ms <ff9147782@gmail.com> <https://github.com/MalakhovStas>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+python-dotenv = "^1.0.0"
+pytoml = "^0.1.21"
+aiohttp = "3.8.5"
+aiohttp-proxy = "^0.1.2"
+loguru = "0.7.0"
+art = "^6.1"
+colorama = "^0.4.6"
+fastapi = "0.103.1"
+uvicorn = {extras = ["standard"], version = "^0.24.0.post1"}
+gunicorn = "^21.2.0"
+types-colorama = "^0.4.15.20240106"
+
+[tool.poetry.group.development.dependencies]
+flake8 = "^6.1.0"
+mypy = "^1.6.1"
+pylint = "^3.0.2"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.mypy]
+python_version = "3.10"
+pretty = true
+
+[[tool.mypy.overrides]]
+module = ["callbacks_server.tools.requests_manager"]
+disable_error_code = ["assignment", "arg-type"]

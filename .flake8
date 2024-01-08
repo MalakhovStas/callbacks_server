@@ -1,0 +1,30 @@
+[flake8]
+max-line-length = 99
+exclude =
+    .git
+    __pycache__
+    pytest_cache
+    .pytest_cache
+    ./pytest_cache
+    pytest_cache/
+    .pytest_cache/
+    .gitlab-ci.yml
+    pyproject.toml
+    README.md
+    env
+    .env
+    venv
+    venv/
+    .venv
+    .venv/
+    ./venv
+     dev
+    dev/
+    .dev
+    ./dev
+    .dev/
+    logs
+    logs/
+    .logs
+    ./logs
+    .logs/

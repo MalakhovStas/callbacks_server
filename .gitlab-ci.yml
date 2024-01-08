@@ -1,0 +1,40 @@
+stages:
+  - code quality
+  - types
+  - linter
+
+flake8:
+  tags:
+    - CallbacksServer
+  stage: code quality
+  when: always
+  before_script:
+    - poetry config virtualenvs.in-project true
+    - poetry install
+    - source $(poetry env info --path)/bin/activate
+  script:
+    - flake8
+
+mypy:
+  tags:
+    - CallbacksServer
+  stage: types
+  when: always
+  before_script:
+    - poetry config virtualenvs.in-project true
+    - poetry install
+    - source $(poetry env info --path)/bin/activate
+  script:
+    - mypy .
+
+pylint:
+  tags:
+    - CallbacksServer
+  stage: linter
+  when: always
+  before_script:
+    - poetry config virtualenvs.in-project true
+    - poetry install
+    - source $(poetry env info --path)/bin/activate
+  script:
+    - pylint *
