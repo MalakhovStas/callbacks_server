@@ -1,3 +1,9 @@
+# Для автоматического запуска при перезагрузке сервера копия этого файла
+# должна лежать в папке /etc/systemd/system/
+# команда для копирования файла в нужную категорию sudo cp callbacks_controller.service /etc/systemd/system/
+# systemctl enable callbacks_controller.service - это команда в регистрации автозапуска при рестарте
+# service callbacks_controller.service start - запуск/ stop
+
 [Unit]
 Description=Gunicorn Daemon for FastAPI application
 After=network.target
