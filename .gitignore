@@ -105,4 +105,4 @@ Control.
 /dev
 
 env/*
-!env/env.local
+!env/.env.default
