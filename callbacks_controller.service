@@ -1,0 +1,10 @@
+[Unit]
+Description=Gunicorn Daemon for FastAPI application
+After=network.target
+[Service]
+User=root
+Group=www-data
+WorkingDirectory=/home/malahov/callbacks_server
+ExecStart=/home/malahov/callbacks_server/.venv/bin/gunicorn -c callbacks_server/config/gunicorn.py callbacks_server.http_api.base:app
+[Install]
+WantedBy=multi-user.target
